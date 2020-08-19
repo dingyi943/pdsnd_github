@@ -23,7 +23,7 @@ def get_filters():
         "City name is invalid! Please input 'chicago', 'new york city' or 'washington': ").lower()
 
     # get user input for month (all, january, february, ... , june)
-    month = input("Please input month name (input 'all' to apply no month filter): ").lower()
+    month = input("Please input month name (input 'all', 'january','february','march','april','may' or 'june'): ").lower()
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
     day = input("Please input day of week (input 'all' to apply no day filter): ").lower()
