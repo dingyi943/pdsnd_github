@@ -17,4 +17,6 @@ new_york_city.csv
 washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+reference list:
+ 1. https://github.com/sumankumarsubudhi/Udacity-Bikeshare-Project
+ 2. https://gist.github.com/Amanansh/e3043227e9a764817b79925d5e82b5bc
