@@ -2,10 +2,10 @@
 This project is created on 1st August.
 
 ### Project Title
-Replace the Project Title
+Explore US Bikeshare Data
 
 ### Description
-Describe what your project is about and what it does
+Explore US Bikeshare Data
 
 ### Files used
 Include the files used
