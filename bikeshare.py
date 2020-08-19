@@ -20,7 +20,7 @@ def get_filters():
 
     while city not in ['chicago', 'new york city', 'washington']:
         city = input(
-        "City is name is invalid! Please input another name: ").lower()
+        "City name is invalid! Please input 'chicago', 'new york city' or 'washington': ").lower()
 
     # get user input for month (all, january, february, ... , june)
     month = input("Please input month name (input 'all' to apply no month filter): ").lower()
@@ -53,7 +53,7 @@ def load_data(city, month, day):
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.weekday_name
     df['start_hour'] = df['Start Time'].dt.hour
-    
+
     # filter by month if applicable
     if month != 'all':
         # use the index of the months list to get the corresponding int
@@ -62,7 +62,7 @@ def load_data(city, month, day):
 
         # filter by month to create the new dataframe
         df = df[df['month'] == month]
-        
+
     # filter by day of week if applicable
     if day != 'all':
         # filter by day of week to create the new dataframe
@@ -93,7 +93,7 @@ def time_stats(df):
         int(df['start_hour'].mode().values[0]))
     )
 
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -103,17 +103,17 @@ def station_stats(df):
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
-    
+
     # TO DO: display most commonly used start station
-    
+
     print("The most common start station is: {} ".format(
         df['Start Station'].mode().values[0])
     )
 
 
-    
+
     # TO DO: display most commonly used end station
-    
+
     print("The most common end station is: {} ".format(
         df['End Station'].mode().values[0])
     )
@@ -124,11 +124,11 @@ def station_stats(df):
     print("The most common start and end station combo is: {} ".format(
         df['station_combi'].mode().values[0])
     )
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-   
-    
+
+
 
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
@@ -141,7 +141,7 @@ def trip_duration_stats(df):
     print("The total travel time is: {} ".format(
         df['duration'].sum())
     )
-    
+
 
     # TO DO: display mean travel time
     print("The mean travel time is: {} ".format(
@@ -162,7 +162,7 @@ def user_stats(df):
     print("Here are the counts of various user types:")
     user_types = df['User Type'].value_counts()
     print(user_types)
-    
+
     # Display counts of gender
     # TO DO: Display counts of gender
     print("Here are the counts of gender:")
@@ -179,38 +179,38 @@ def user_stats(df):
         print("The most recent birth year is: {}".format(most_recent))
         most_common = int(df['Birth Year'].mode().values[0])
         print("The most common birth year is: {}".format(most_common))
-        
+
     # TO DO: Display earliest, most recent, and most common year of birth
 
-    
-    
+
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 def display_data(df):
     """ Display 5 lines raw data as requested by the user."""
-    
+
     start = 0
-   
+
     raw_data = input("Would you like to see 5 lines raw data? yes or no: ").lower()
-    while True:  
+    while True:
         if raw_data =='no':
             break
-        
+
         else:
-            
+
             print(df.iloc[start:start + 5])
             start += 5
             end_display = input("Would you like to continue? yes or no: ").lower()
             if end_display != 'yes':
                 break
-           
-        
- 
 
-     
+
+
+
+
 def main():
-    
+
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
@@ -220,8 +220,8 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
         display_data(df)
-        
-       
+
+
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
