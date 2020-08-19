@@ -5,7 +5,8 @@ This project is created on 1st August.
 Explore US Bikeshare Data
 
 ### Description
-Explore US Bikeshare Data
+This project is to use Python to understand US bikeshare data,  calculating statistics and building an interactive environment where a user can choose the data and filter for a dataset to analyze.
+
 
 ### Files used
 Include the files used
